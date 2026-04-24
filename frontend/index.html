@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoScript IDE</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">OLC1 Proyecto 2</p>
+        <h1>GoScript Studio</h1>
+        <p class="subtitle">Editor web simple para abrir, crear, guardar y ejecutar archivos <code>.gst</code>.</p>
+      </div>
+      <div class="actions">
+        <button id="newFile">Nuevo</button>
+        <label class="file-btn">
+          Abrir
+          <input id="openFile" type="file" accept=".gst,text/plain">
+        </label>
+        <button id="saveFile">Guardar</button>
+        <button id="runCode" class="primary">Ejecutar</button>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel editor-panel">
+        <div class="panel-header">
+          <span id="currentFile">sin_nombre.gst</span>
+          <span id="cursorInfo">Línea 1</span>
+        </div>
+        <textarea id="editor" spellcheck="false"></textarea>
+      </div>
+
+      <div class="panel side-panel">
+        <div class="tabs">
+          <button class="tab active" data-target="console">Consola</button>
+          <button class="tab" data-target="errors">Errores</button>
+          <button class="tab" data-target="symbols">Símbolos</button>
+          <button class="tab" data-target="ast">AST</button>
+        </div>
+        <div class="tab-content active" id="console"></div>
+        <div class="tab-content" id="errors"></div>
+        <div class="tab-content" id="symbols"></div>
+        <pre class="tab-content" id="ast"></pre>
+      </div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
